@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-// Functie pentru a extrage o subexpresie
+
 int paranteze(const char* expr, int start) {
     int count = 0;
     for (int i = start; expr[i]; i++) {
@@ -11,7 +11,7 @@ int paranteze(const char* expr, int start) {
         else if (expr[i] == ')') count--;
         if (count == 0) return i;
     }
-    return -1; // error
+    return -1; 
 }
 
 int toInt(const char* str, int start, int end) {
@@ -41,7 +41,7 @@ int eval(const char* expr, int start, int end) {
         }
     }
 
-    // inmultire și imparire
+    // inmultire si impartire
     for (int i = end; i >= start; i--) {
         if (expr[i] == ')') par++;
         else if (expr[i] == '(') par--;
